@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title><%= full_title(yield(:page_title_tag)) %></title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<!--[if IE 7]>
+			<link rel="stylesheet" href="/css/font-awesome/font-awesome-ie7.min.css">
+		<![endif]-->
+		<%= javascript_include_tag "application" %>
+		<%= csrf_meta_tags %>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="/css/component.css" />
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+		<!-- overlay menubar -->
+		<link rel="stylesheet" type="text/css" href="/overlayEffect/css/style.css" />
+	</head>
+	<body>
+		<!-- shared header -->
+		<%= render 'shared/header' %>
+		
+		<div class="container" id="container">
+			<%= yield %>
+		</div>
+		<script src="/js/modernizr.custom.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/jquery.animate-shadow-min.js"></script>
+		<script type="text/javascript" src="/overlayEffect/js/custom.js"></script>
+	</body>
+</html>

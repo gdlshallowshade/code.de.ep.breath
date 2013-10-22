@@ -1,0 +1,66 @@
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body {
+			text-align: center;
+		}
+		h1 {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: -10;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: white;
+			box-shadow: 0px 0px 30px #CC0000;
+			/*transition: all 0.5s;
+			-webkit-transition: all 0.5s;
+			-moz-transition: all 0.5s;
+			-o-transition: all 0.5s;	*/
+		}
+		p:hover {
+			color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<h1><span></span></h1>
+	<br>
+	<br>
+	<br>
+	<br>
+	<p>hahaha</p>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.animate-shadow-min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			breathEffect($('h1'), 1500);
+			
+			function breathEffect(target, interval) {
+				setInterval(function() {
+				    target.animate(
+						{
+							width: "20px",
+							height: "20px",
+							boxShadow: "0px 0px 60px #CC0000"
+						},
+						interval * 0.5,
+						function() {
+							target.animate(
+								{
+									width: "10px",
+									height: "10px",
+									boxShadow: "0px 0px 60px #CC0000"			
+								},
+								interval * 0.5
+							)
+						}
+					);  
+				}, interval);
+			};
+		});
+	</script>
+</body>
+</html>

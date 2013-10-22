@@ -1,0 +1,265 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// overall setting
+body {
+	height: 100%;
+	min-width: 1000px;
+
+	// menu bar
+	#menu {
+		z-index: 200;
+	}
+
+	// container
+	.container {
+		height: 100%;
+	}
+}
+
+// header section
+.header {
+	text-align: left;
+	height: 80px;
+	
+	// header nav
+	nav {
+		float: left;
+		margin: 8px 0;	
+		display: none;
+	}
+
+	// breathBar
+	#breathBar {
+		float: left;
+		width: 1.5px;
+		height: 57px;
+		margin-top: 8px;
+		background-color: #C8343A;
+		box-shadow: 0px 0px 8px #000000;
+	}
+
+	// gem logo
+	.gem {
+		position: relative;
+		width: 55px;
+		height: 35px;
+		cursor: pointer;
+		margin-left: -5px;
+	}
+	.gem-topleft {
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-bottom: 10px solid #C32026;
+		border-left: 17px solid transparent;
+	}
+	.gem-topright {
+		position: absolute;
+		left: 18px;
+		width: 0;
+		height: 0;
+		border-bottom: 10px solid #7E7E7E;
+		border-right: 17px solid transparent;
+	}
+	.gem-bottomleft {
+		position: absolute;
+		top: 11px;
+		width: 0;
+		height: 0;
+		border-top: 10px solid #7E7E7E;
+		border-left: 17px solid transparent;	
+	}
+	.gem-bottomright {
+		position: absolute;
+		top: 11px;
+		left: 18px;
+		width: 0;
+		height: 0;
+		border-top: 10px solid #C1C4C4;
+		border-right: 17px solid transparent;	
+	}
+
+	// semi-gem
+	.semi-gem {
+		display: none;
+		margin: 15px 0 10px -20px;
+		width: 35px;
+	}
+	// h2 
+	h2 {
+		float: left;
+		margin-left: 25px;
+		color: #7E7E7E;
+		span {
+			color: #C1C4C4;
+		}
+	}
+}
+
+// #content
+#content {
+	height: 100%;
+	min-height: 600px;
+	.quarter {
+		height: 45%;
+		position: relative;
+		overflow:hidden;
+		// border-box
+		-webkit-box-sizing:border-box;
+		-moz-box-sizing:border-box;
+		-ms-box-sizing:border-box;
+		-o-box-sizing:border-box;
+		box-sizing:border-box;
+		
+		padding: 5px;
+
+		// transition
+		-webkit-transition: all 2s; // Safari 
+		-moz-transition: all 2s; // Firefox
+		-ms-transition: all 2s;
+		-o-transition: all 2s;
+		transition: all 2s;
+
+		// previews
+		.pv-box {
+			width: 95%;
+			height: 95%;
+			margin-left: 5px;
+			overflow: hidden;
+			.preview {
+				border: #ecf0f1 3px solid;
+				// rotate
+				-webkit-transform: rotate(-31deg);
+				-moz-transform: rotate(-31deg);
+				-o-transform: rotate(-31deg);
+				-ms-transform: rotate(-31deg);
+				transform: rotate(-31deg);
+			}
+			.pv-1 {
+				height: 60%;
+				margin: -74px 0 21px -66px;
+				// margin-left: -66px;
+				// margin-bottom: 21px;
+			}
+			.pv-2 {
+				height: 40%;
+				margin-top: -25px;
+			}
+			.pv-3 {
+				height: 40%;
+				margin-left: 54px;
+			}
+		}
+
+		.gemArea {
+			display:inline-block;
+			position: absolute;
+
+			img {
+				cursor:pointer;
+			}
+		}
+
+		.title {
+			position: absolute; 
+			a:hover {
+				text-decoration: none;
+				color: #c0392b;
+			}
+			padding: 0 20px 8px;
+			box-sizing:border-box;
+			// transition
+			-webkit-transition: all 1s; // Safari 
+			-moz-transition: all 1s; // Firefox
+			-ms-transition: all 1s;
+			-o-transition: all 1s;
+			transition: all 1s;
+		}
+	}
+	// quarter which are both row and col active
+	.quarter_row_active.quarter_col_active:before {
+		z-index: -100;
+		position:absolute;
+		content:"";
+		display:block;
+		left:0;
+		top:0;
+		width: 94%;
+		height:90%;
+		margin: 10px;
+		background: rgba(192, 57, 43, 0.4);
+		box-shadow: 0px 0px 15px #7f8c8d;
+	}
+
+	.quarter_row_active {
+		height: 55% !important;
+		opacity: 1 !important;
+		&:hover {
+			.title {
+				
+			}
+		}
+	}
+	.quarter_col_active {
+		width: 50% !important;
+		opacity: 1 !important;
+		&:hover {
+			.title {
+				&:hover {
+					
+				}
+			}
+		}
+	}
+	.quarter_row_deactive {
+		height: 40% !important; 
+		opacity: 0.5 !important;
+	}
+	.quarter_col_deactive {
+		width: 33.333% !important;
+		opacity: 0.5 !important;
+	}
+
+
+	// image area
+	#row1-col1 .gemArea {
+		bottom: 3px;
+		right: 3px;
+	}
+	#row1-col2 .gemArea {
+		bottom: 3px;
+		left: 3px;
+	} 
+	#row2-col1 .gemArea {
+		top: 3px;
+		right: 3px;
+	}
+	#row2-col2 .gemArea {
+		top: 3px;
+		left: 3px;
+	}
+	// title area
+	#row1-col1 .title {
+		top: 120px;
+		left: 110px;
+	}
+	#row1-col2 .title {
+		top: 120px;
+		right: 110px;
+	} 
+	#row2-col1 .title {
+		bottom: 120px;
+		left: 110px;
+	}
+	#row2-col2 .title {
+		bottom: 120px;
+		right: 110px;
+	}
+}
+
+
+
+
+

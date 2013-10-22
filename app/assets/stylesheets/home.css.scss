@@ -332,7 +332,7 @@ body {
 	// social box
 	#social-box {
 		position: absolute;
-		bottom: 5px;
+		bottom: 0px;
 		// margin-top: calc(100% - 65px);
 		#social-link {
 			list-style: none;
@@ -346,8 +346,10 @@ body {
 				line-height: 50px;
 				a {
 					&:hover {
+						width: 50px;
 						color: #ecf0f1;
 						text-decoration: none;
+						border-bottom: solid 3px #ecf0f1;
 					}
 				}
 			}

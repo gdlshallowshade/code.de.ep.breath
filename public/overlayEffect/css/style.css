@@ -109,23 +109,25 @@ p{
 ul.menu{
 	list-style:none;
 	position:fixed;
-	height:270px;
+	/*height:270px;*/
 	width:54px
 }
 ul.menu li{
 	display:block;
 }
 ul.menu li a{
+	margin-left: 2px;
 	font-size:1.5em;
-	color: #C1C4C4;
-	background:#555;
+	/*color: #C1C4C4;*/
+	color:#464D4D;
+	/*background:#555;*/
 	display:block;
 	padding:10px;
 	width:50px;
 	height:50px;
 	line-height:21px;
 	outline:none;
-	border:2px solid #333;
+	/*border:2px solid #333;*/
 	text-align:center;
 }
 ul.menu li a:hover{

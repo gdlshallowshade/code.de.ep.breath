@@ -3,13 +3,88 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // overall setting
+
+// overall transition class
+.transition {
+	-webkit-transition: all 1s; // Safari 
+	-moz-transition: all 1s; // Firefox
+	-ms-transition: all 1s;
+	-o-transition: all 1s;
+	transition: all 1s;
+}
+// overall border-box class
+.border-box {
+	// border-box
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
 body {
 	height: 100%;
 	min-width: 1000px;
 
 	// menu bar
 	#menu {
+		height: 100%;
 		z-index: 200;
+		background: url("/img/pattern.png");
+		li:first-child {
+			background: rgba(236, 240, 241, 0.75);
+		}
+	}
+	#menu.active {
+		width: 200px;
+		text-align: center;
+		li {
+			&:first-child {
+				a {	
+					height: 120px;
+					div {
+						height: 55px;
+					}
+					p {
+						font-size: 14pt;
+						color: #95a5a6;
+						span {
+							color: #687373;
+						}
+					}
+				}
+			}
+			
+			a { 
+				width: 200px;	
+				overflow: hidden;
+				div:first-child {
+					width: 20px;
+					float:left;
+					display:inline-block;
+				}
+				
+				// typo-item
+				.typo-item {
+					display:inline-block !important;
+					font-size: 10pt;
+					float:left;
+					margin-left: 20px;
+					
+					// prompt for contact
+					img#prompt-contact {
+						margin-left:50px;
+						&:hover {
+							-webkit-transform: rotate(180deg);
+							-moz-transform: rotate(180deg);
+							-o-transform: rotate(180deg);
+							-ms-transform: rotate(180deg);
+							transform: rotate(180deg);
+						}
+					}
+				}
+			}
+		}
 	}
 
 	// container
@@ -106,21 +181,8 @@ body {
 		height: 45%;
 		position: relative;
 		overflow:hidden;
-		// border-box
-		-webkit-box-sizing:border-box;
-		-moz-box-sizing:border-box;
-		-ms-box-sizing:border-box;
-		-o-box-sizing:border-box;
-		box-sizing:border-box;
 		
 		padding: 5px;
-
-		// transition
-		-webkit-transition: all 2s; // Safari 
-		-moz-transition: all 2s; // Firefox
-		-ms-transition: all 2s;
-		-o-transition: all 2s;
-		transition: all 2s;
 
 		// previews
 		.pv-box {
@@ -170,12 +232,6 @@ body {
 			}
 			padding: 0 20px 8px;
 			box-sizing:border-box;
-			// transition
-			-webkit-transition: all 1s; // Safari 
-			-moz-transition: all 1s; // Firefox
-			-ms-transition: all 1s;
-			-o-transition: all 1s;
-			transition: all 1s;
 		}
 	}
 	// quarter which are both row and col active
@@ -256,6 +312,46 @@ body {
 	#row2-col2 .title {
 		bottom: 120px;
 		right: 110px;
+	}
+}
+
+// contact panel
+#contact-panel {
+	position: fixed;
+	bottom: 0px;
+	left: 200px;
+	width: 250px;
+	height: calc(100% - 270px);
+	background: url("/img/bg_black.png");
+
+	// twitter box
+	#twitter-box {
+		height: 70%;
+	}
+
+	// social box
+	#social-box {
+		position: absolute;
+		bottom: 5px;
+		// margin-top: calc(100% - 65px);
+		#social-link {
+			list-style: none;
+			li {
+				display: inline-block;
+				text-align: center;
+				width: 55px;
+				height: 55px;
+				margin-left: 4px;
+				font-size: 20pt;
+				line-height: 50px;
+				a {
+					&:hover {
+						color: #ecf0f1;
+						text-decoration: none;
+					}
+				}
+			}
+		}
 	}
 }
 

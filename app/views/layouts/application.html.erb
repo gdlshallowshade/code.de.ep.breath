@@ -13,9 +13,12 @@
 		<link rel="stylesheet" type="text/css" href="/css/normalize.css" />
 		<link rel="stylesheet" type="text/css" href="/css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="/css/component.css" />
-		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.2/css/font-awesome.css" rel="stylesheet">
 		<!-- overlay menubar -->
 		<link rel="stylesheet" type="text/css" href="/overlayEffect/css/style.css" />
+		<!-- blog css -->
+		<%= yield :blog_css %>
+
 	</head>
 	<body>
 		<!-- shared header -->
@@ -29,5 +32,6 @@
 		<script type="text/javascript" src="js/jquery.animate-shadow-min.js"></script>
 		<script type="text/javascript" src="/js/custom.js"></script>
 		<script type="text/javascript" src="/overlayEffect/js/custom.js"></script>
+		<%= yield :blog_script %>
 	</body>
 </html>

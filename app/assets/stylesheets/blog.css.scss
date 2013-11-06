@@ -1,3 +1,173 @@
 // Place all the styles related to the Blog controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h2, h3 {
+	color: #777;
+	font-size: 2em;
+}
+
+.none {
+	display: none;
+}
+
+#blog-wrapper {
+	padding-left: 0 !important; 
+	padding-right: 0;
+	height: 100%;
+	// border-left: 10px solid #222222;
+	background: rgba(255,255,255,0.8);
+	min-width: 585px;
+	box-shadow: 0 0 10px #777;
+}
+.blog_item {
+	margin: 10px 0 0 10px;
+	// overflow: hidden;
+	position: relative;
+
+	.date {
+		float: left;
+		width: 164px;
+		margin: 0 0	15px 0px;
+		height: 100px;
+		background-color: #962d22;
+		ul {
+			list-style: none;
+			margin: 5px;
+			text-align: center;
+			li {
+				height: 100%;
+				text-align: center;
+				padding: 5px;
+				display: inline-block;
+			}
+		}
+		ul.top {
+			color: white;
+			height: 35px;
+			li {
+				line-height: 25px;
+			}
+		}
+		ul.bottom {
+			height: 50px;
+			background-color: white;
+			color: #555555;
+			li {
+				line-height: 40px;
+				width: 48%;
+				&:first-child {
+					border-right: 2px solid #962d22;
+				}
+			}
+		}
+	}
+	.title {
+		position: relative;
+		float: left;
+		width: calc(100% - 165px);
+		span {
+			bottom: 0;
+			left: 5px;
+		}
+		div.decoraLine {
+			height: 2px;
+			width: calc(100% - 55px);
+			left: 30px;
+			bottom: 0;
+			background-color: #7F8C8D;
+		}
+		h2 {
+			line-height: 60px;
+			margin-left: 30px;
+		}
+		span.square {
+			width: 20px;
+			height: 20px;
+			top: 47px;
+			left: 380px;
+			background: rgba(199, 61, 65, 1);
+			box-shadow: 0 0 5px #999;
+		}
+	}
+
+	.content {
+		position: relative;
+		width: 95%;
+		span.corner {
+			right:-29px;
+			top: -30px;
+		}
+		p {
+			margin: 10px 10px 0 0;
+			font-size: 11pt;
+			letter-spacing: 0px;
+			color: #999;
+			background-color: #dde4e6;
+		}
+		div.decoraLine {
+			right: -29px;
+			top: 0;
+			width: 2px;
+			height: 100%;
+			background-color: #962d22;
+		}
+	}
+
+	.shortcuts {
+		list-style: none;
+		position: absolute;
+		top: 45%;
+		right: 2px;
+		color: #7F8C8D;
+		li {
+			cursor: pointer;
+			font-size: 20px;
+			width: 28px;
+			height: 28px;
+			margin-bottom: 10px;
+			border-right: #7f8c8d solid 2px;
+		}
+	}
+
+	.short_content {
+		position: absolute;
+		top: 30px;
+		right: -550px;
+		height: calc(100% - 30px);
+		background: rgba(255,255,255,0.8);
+		min-width: 530px;
+		box-shadow: 0 0 10px #777;
+		h3 {
+			position: relative;
+			margin-left: 50px;
+			span.square {
+				width: 20px;
+				height: 20px;
+				top: -3px;
+				left: -54px;
+				// background-color: transparent;
+				background: rgba(127, 140, 141, 1);
+				box-shadow: 0 0 5px #999;
+			}
+		}
+	}
+
+	.blogFooter {
+		margin-top: 20px;
+		position: relative;
+		height: 50px;
+		.triangle {
+			right: 0;
+			bottom: 0;
+			width: 0;
+			height: 0;
+			border-top: 39px solid #C1C4C4;
+			border-right: 39px solid transparent;
+		}
+	}
+
+	// corners, decoraLine, triangle, square
+	.corner, .decoraLine, .triangle, .square {
+		position: absolute;
+	}
+}

@@ -1,6 +1,6 @@
 Delonggao::Application.routes.draw do
-  root :to => 'home#index'
-  match '/blog' => 'blog#index'
+  root :to => 'home#home'
+  match '/blog' => 'blog#blog'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,82 @@
+<!-- addtional css links for blog -->
+<%= content_for :blog_css do %>
+	<link rel="stylesheet" type="text/css" href="/css/blog.css">
+<% end %>
+<!-- page title -->
+<% provide(:page_title_tag, "blog") %>
+
+<!-- blog content -->
+<div class="row">
+	<div class="col-xs-6" id="blog-wrapper">
+		<!-- blog item -->
+		<div class="blog_item">
+			<div class="date">
+				<ul class="top">
+					<li>MM / </li>
+					<li>DD / </li>
+					<li>YYYY</li>
+				</ul>
+
+				<ul class="bottom">
+					<li>WEK</li>
+					<li>CHN</li>
+				</ul>
+			</div>
+
+			<div class="title">
+				<span class="corner"><img src="/img/angle-icon.png"></span>
+				<span class="square none"></span>
+				<div class="decoraLine"></div>
+				<h2>Title title title</h2>
+			</div>
+
+			<div class="clearfix"></div>
+
+			<div class="content">
+				<span class="corner"><img src="/img/angle-alt-icon.png"></span>
+				<p>Paragraph 1 Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1</p>
+				<p>paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 </p>
+				<div class="decoraLine"></div>
+			</div>
+
+			<!-- attachments -->
+			<ul class="shortcuts">
+				<li data-target="imagebox"><i class="fa fa-picture-o fa-2"></i></li>
+				<li data-target="videobox"><i class="fa fa-film fa-2"></i></li>
+				<li data-target="codebox"><i class="fa fa-code fa-2"></i></li>
+			</ul>
+
+			<div class="imagebox col-xs-11 short_content none">
+				<h3>
+					<span class="square"></span>
+					Image
+				</h3>
+				<p>Slide</p>
+			</div>
+			<div class="videobox col-xs-11 short_content none">
+				<h3>
+					<span class="square"></span>
+					video
+				</h3>
+				<p>Youtube video</p>
+			</div>
+			<div class="codebox col-xs-11 short_content none">
+				<h3>
+					<span class="square"></span>
+					Code
+				</h3>
+				<div class="codeBlock">code block</div>
+			</div>
+
+			<div class="blogFooter">
+				<div class="triangle"></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<%= content_for :blog_script do %>
+	<script type="text/javascript" src="/js/blog_custom.js"></script>
+<% end %>
+<!-- contact paenl -->
+<%= render 'shared/contactPanel' %>

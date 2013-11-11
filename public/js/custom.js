@@ -96,4 +96,11 @@ function toggleControlPanel() {
 	else {
 		$('#contact-panel').fadeOut();
 	}
+};
+
+function equalHeight(target1, target2) {
+	var maxHeight = Math.max(target1.height(), target2.height());
+	target1.css("height",maxHeight);
+	target2.css("height",maxHeight);
 }
+

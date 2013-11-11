@@ -18,7 +18,7 @@
 		<link rel="stylesheet" type="text/css" href="/overlayEffect/css/style.css" />
 		<!-- blog css -->
 		<%= yield :blog_css %>
-
+		<%= yield :admin_blog_style %>
 	</head>
 	<body>
 		<!-- shared header -->
@@ -33,5 +33,6 @@
 		<script type="text/javascript" src="/js/custom.js"></script>
 		<script type="text/javascript" src="/overlayEffect/js/custom.js"></script>
 		<%= yield :blog_script %>
+		<%= yield :admin_blog_js %>
 	</body>
 </html>

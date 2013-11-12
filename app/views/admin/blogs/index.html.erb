@@ -6,74 +6,111 @@
 <% provide(:page_title_tag, "blog") %>
 
 <!-- blog content -->
-<div class="row">
-	<div class="col-xs-6" id="blog-wrapper">
-		<!-- blog item -->
-		<div class="blog_item">
-			<div class="date">
-				<ul class="top">
-					<li>MM / </li>
-					<li>DD / </li>
-					<li>YYYY</li>
+<% @blogs.each do |blog|  %>
+	<div class="row">
+		<div class="col-xs-6 blog-wrapper">
+			<!-- blog item -->
+			<div class="blog_item">
+				<div class="date">
+					<ul class="top">
+						<li><%= blog.date.split("/")[1] %> / </li>
+						<li><%= blog.date.split("/")[2] %> / </li>
+						<li><%= blog.date.split("/")[3] %></li>
+					</ul>
+
+					<ul class="bottom">
+						<li><%= blog.date.split("/")[0][0,3] %></li>
+						<li>CHN</li>
+					</ul>
+				</div>
+
+				<div class="title">
+					<span class="corner"><img src="/img/angle-icon.png"></span>
+					<span class="square none"></span>
+					<div class="decoraLine"></div>
+					<h2><%= blog.title %></h2>
+				</div>
+
+				<div class="clearfix"></div>
+
+				<div class="content">
+					<span class="corner"><img src="/img/angle-alt-icon.png"></span>
+					<p><%= blog.detail %></p>
+					<div class="decoraLine"></div>
+				</div>
+
+				<!-- attachments -->
+				<ul class="shortcuts">
+					<li data-target="imagebox"><i class="fa fa-picture-o fa-2"></i></li>
+					<li data-target="videobox"><i class="fa fa-film fa-2"></i></li>
+					<li data-target="codebox"><i class="fa fa-code fa-2"></i></li>
 				</ul>
 
-				<ul class="bottom">
-					<li>WEK</li>
-					<li>CHN</li>
-				</ul>
-			</div>
+				<div class="imagebox col-xs-11 short_content none">
+					<h3>
+						<span class="square"></span>
+						Image
+					</h3>
+					<!-- slider -->
+					<div id="carousel-image" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators">
+						    <% blog.images.each_with_index do |image, index| %>
+							    <li data-target="#carousel-image" data-slide-to="<%= index %>"
+							    	<% if index == 0 %>
+							    		 class="active"
+							    	<% end %>
+							    ></li>
+							<% end %>
+						</ol>
 
-			<div class="title">
-				<span class="corner"><img src="/img/angle-icon.png"></span>
-				<span class="square none"></span>
-				<div class="decoraLine"></div>
-				<h2>Title title title</h2>
-			</div>
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+						    <% blog.images.each_with_index do |image, index| %>
+							    <div class="item 
+							    <% if index == 0 %>
+							    	active
+							    <% end %>
+							    ">
+							      	<img src="<%= image.image_url.to_s %>" alt="image_<%= index %>">
+							      	<div class="carousel-caption">
+							        	<%= image.caption %>
+							      	</div>
+							    </div>
+						    <% end %>
+						</div>
 
-			<div class="clearfix"></div>
+						<!-- Controls -->
+						<a class="left carousel-control" href="#carousel-image" data-slide="prev">
+						    <span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#carousel-image" data-slide="next">
+						    <span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div>
+				</div>
+				<div class="videobox col-xs-11 short_content none">
+					<h3>
+						<span class="square"></span>
+						video
+					</h3>
+					<p>Youtube video</p>
+				</div>
+				<div class="codebox col-xs-11 short_content none">
+					<h3>
+						<span class="square"></span>
+						Code
+					</h3>
+					<div class="codeBlock">code block</div>
+				</div>
 
-			<div class="content">
-				<span class="corner"><img src="/img/angle-alt-icon.png"></span>
-				<p>Paragraph 1 Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1Paragraph 1</p>
-				<p>paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 paragraph 2 </p>
-				<div class="decoraLine"></div>
-			</div>
-
-			<!-- attachments -->
-			<ul class="shortcuts">
-				<li data-target="imagebox"><i class="fa fa-picture-o fa-2"></i></li>
-				<li data-target="videobox"><i class="fa fa-film fa-2"></i></li>
-				<li data-target="codebox"><i class="fa fa-code fa-2"></i></li>
-			</ul>
-
-			<div class="imagebox col-xs-11 short_content none">
-				<h3>
-					<span class="square"></span>
-					Image
-				</h3>
-				<p>Slide</p>
-			</div>
-			<div class="videobox col-xs-11 short_content none">
-				<h3>
-					<span class="square"></span>
-					video
-				</h3>
-				<p>Youtube video</p>
-			</div>
-			<div class="codebox col-xs-11 short_content none">
-				<h3>
-					<span class="square"></span>
-					Code
-				</h3>
-				<div class="codeBlock">code block</div>
-			</div>
-
-			<div class="blogFooter">
-				<div class="triangle"></div>
+				<div class="blogFooter">
+					<div class="triangle"></div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+<% end %>
 
 <%= content_for :blog_script do %>
 	<script type="text/javascript" src="/js/blog_custom.js"></script>

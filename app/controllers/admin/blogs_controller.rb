@@ -3,7 +3,7 @@ class Admin::BlogsController < ApplicationController
 
   # RESTful Style controller
   def index
-  	
+  	@blogs = Blog.all
   end
 
   def show
@@ -15,7 +15,14 @@ class Admin::BlogsController < ApplicationController
   end
 
   def create
-  	
+  	@blog = Blog.new(params[:blog])
+    if @blog.save
+      flash[:notice] = "Blog created"
+      redirect_to "/blogs"
+    else 
+      flash[:notice] = "Error occured, cannot create blog"
+      redirect_to "/blogs/new"
+    end
   end
 
   def edit

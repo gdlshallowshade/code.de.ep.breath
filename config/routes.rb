@@ -5,6 +5,7 @@ Delonggao::Application.routes.draw do
     # Directs /admin/products/* to Admin::ProductsController
     # (app/controllers/admin/products_controller.rb)
     resources :blogs
+    resources :images
   end
 
   # The priority is based upon order of creation:

@@ -27,11 +27,17 @@ gem 'jquery-rails'
 # mongoid
 gem "mongoid", "~> 3.1.4"
 
+# carrierwave
+gem "carrierwave-mongoid", "~> 0.6.3"
+
 # rmagick
 gem "rmagick", "~> 2.13.2"
 
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
+
+# nested forms to handle nested models
+gem "nested_form", "~> 0.3.2"
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

@@ -10,14 +10,14 @@ h2, h3 {
 	display: none;
 }
 
-#blog-wrapper {
+.blog-wrapper {
 	padding-left: 0 !important; 
 	padding-right: 0;
 	height: 100%;
-	// border-left: 10px solid #222222;
 	background: rgba(255,255,255,0.8);
 	min-width: 585px;
 	box-shadow: 0 0 10px #777;
+	margin-bottom: 20px;
 }
 .blog_item {
 	margin: 10px 0 0 10px;
@@ -77,7 +77,7 @@ h2, h3 {
 			background-color: #7F8C8D;
 		}
 		h2 {
-			line-height: 60px;
+			// line-height: 60px;
 			margin-left: 30px;
 		}
 		span.square {
@@ -103,6 +103,7 @@ h2, h3 {
 			letter-spacing: 0px;
 			color: #999;
 			background-color: #dde4e6;
+			min-height: 110px;
 		}
 		div.decoraLine {
 			right: -29px;
@@ -122,8 +123,8 @@ h2, h3 {
 		li {
 			cursor: pointer;
 			font-size: 20px;
-			width: 28px;
-			height: 28px;
+			width: 25px;
+			height: 25px;
 			margin-bottom: 10px;
 			border-right: #7f8c8d solid 2px;
 		}

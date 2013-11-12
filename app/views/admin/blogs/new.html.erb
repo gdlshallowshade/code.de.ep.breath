@@ -22,7 +22,7 @@
 			<div class="tab-content">
 				<!-- blog -->
 			  	<div class="tab-pane active" id="blog">
-			  		<%= form_for @blog do |f| %>
+			  		<%= nested_form_for @blog, :html => {:multipart => true} do |f| %>
 			  			<!-- date, title, detail -->
 				  		<div class="col-xs-6" id="write_content">
 				  			<div class="form-group">
@@ -62,7 +62,18 @@
 								<!-- Tab panes -->
 								<div class="tab-content">
 									<!-- blog -->
-								  	<div class="tab-pane active" id="image">Upload image</div>
+								  	<div class="tab-pane active" id="image">
+								  		<!-- image uploader -->
+								  		<%= f.fields_for :images do |builder| %>
+								  			<div class="form-group">
+								  				<%= builder.label :caption, "Caption" %>
+								  				<%= builder.text_field :caption %>
+								  				<%= builder.file_field :image %>
+								  				<%= builder.link_to_remove "Remove" %>
+								  			</div>
+								  		<% end %>
+								  		<p><%= f.link_to_add "Add an image", :images %></p>
+								  	</div>
 								  	<div class="tab-pane" id="video">upload video</div>
 								  	<div class="tab-pane" id="code">upload code</div>
 								</div>
